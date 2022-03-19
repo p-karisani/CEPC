@@ -565,7 +565,7 @@ class EInputBundle:
     @staticmethod
     def get_tweet_query_bundles(label_count, lc, tw_path, max_set_length = 0, remove_lbls = False):
         # skips ETokens!
-        tws = ETweet.load(tw_path, ELoadType.none)
+        tws = ETweet.load(tw_path, ELoadType.none, False)
         if remove_lbls:
             for cur_tw in tws:
                 cur_tw.Label = 0
