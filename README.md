@@ -20,12 +20,12 @@ See the file “sample.data” for a sample input.
 **Training and Evaluation**<br/>
 Below you can see an example command to run the code. This command tells the code to use a subset of the documents in the training and the unlabeled sets to train a model and evaluate in the test set—F1 measure is printed at the end of the execution.
 ```
-python -m CEPC.src.MainThread --cmd da_m_mine1 
---itr 5 
+python -m CEPC.src.MainThread --cmd da_m_mine1 \
+--itr 5 \
 --model_path /user/desktop/bert-base-uncased/ \
 --data_path /user/desktop/data/sample.data \
 --output_dir /user/desktop/output \
---device 0 
+--device 0 \
 --seed 666 
 ```
 
