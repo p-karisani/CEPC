@@ -116,8 +116,7 @@ class EBertClassifier(EClassifier):
         if type(module) is BertModel:
             if module not in loaded:
                 module.load_state_dict(EBertClassifier.__load_pretrained_bert_layer(config).state_dict())
-                if config.gradient_checkpointing:
-                    module.gradient_checkpointing_enable()
+                module.gradient_checkpointing_enable()
                 loaded.add(module)
             else:
                 print('already loaded')
@@ -125,8 +124,7 @@ class EBertClassifier(EClassifier):
         elif isinstance(module, EBertModelWrapper):
             if module not in loaded:
                 module.bert_layer.load_state_dict(EBertClassifier.__load_pretrained_bert_layer(config).state_dict())
-                if config.gradient_checkpointing:
-                    module.gradient_checkpointing_enable()
+                module.gradient_checkpointing_enable()
                 loaded.add(module)
             else:
                 print('already loaded')
